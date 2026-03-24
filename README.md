@@ -31,15 +31,16 @@ We hope BatteryML can empower both battery researchers and data scientists to ga
 ## Dataset
 | Data Source | Electrode Chemistry | Nominal Capacity | Voltage Range (V) | RUL dist. | SOC dist. (%) | SOH dist. (%) | Cell Count |  
 |---|---|---|---|---|---|---|---|  
-| CALCE | LCO/graphite | 1.1 | 2.7-4.2 | 566±106 | 77±17 | 48±30 | 13 |  
-| MATR | LFP/graphite | 1.1 | 2.0-3.6 | 823±368 | 93±7 | 36±36 | 180 |  
-| HUST | LFP/graphite | 1.1 | 2.0-3.6 | 1899±389 | 100±10 | 43±28 | 77 |  
-| HNEI | NMC_LCO/graphite | 2.8 | 3.0-4.3 | 248±15 | 64±17 | 49±28 | 14 |  
-| RWTH | NMC/carbon | 1.11 | 3.5-3.9 | 658±64 | 60±24 | 46±22 | 48 |  
-| SNL | NCA,NMC,LFP/graphite | 1.1 | 2.0-3.6 | 1256±1321 | 86±7 | 45±27 | 61 |  
-| UL_PUR | NCA/graphite | 3.4 | 2.7-4.2 | 209±50 | 89±6 | 41±33 | 10 |  
+| CALCE | Lithium Cobalt Oxide (LCO)/graphite | 1.1 | 2.7-4.2 | 566±106 | 77±17 | 48±30 | 13 |  
+| MATR | Lithium Iron Phosphate (LFP)/graphite | 1.1 | 2.0-3.6 | 823±368 | 93±7 | 36±36 | 180 |  
+| HUST | Lithium Iron Phosphate (LFP)/graphite | 1.1 | 2.0-3.6 | 1899±389 | 100±10 | 43±28 | 77 |  
+| HNEI | Nickel Manganese Cobalt_Lithium Cobalt Oxide (NMC_LCO)/graphite | 2.8 | 3.0-4.3 | 248±15 | 64±17 | 49±28 | 14 |  
+| RWTH | Nickel Manganese Cobalt (NMC)/carbon | 1.11 | 3.5-3.9 | 658±64 | 60±24 | 46±22 | 48 |  
+| SNL | Nickel Cobalt Aluminum (NCA), Nickel Manganese Cobalt (NMC), Lithium Iron Phosphate (LFP)/graphite | 1.1 | 2.0-3.6 | 1256±1321 | 86±7 | 45±27 | 61 |  
+| UL_PUR | Nickel Cobalt Aluminum (NCA)/graphite | 3.4 | 2.7-4.2 | 209±50 | 89±6 | 41±33 | 10 |  
 
-For RUL (Remaining Useful Life) tasks, we also created combined datasets from the public sources to assess training efficacy when various battery data are combined. Notably:
+
+For Remaining Useful Life (RUL) tasks, we also created combined datasets from the public sources to assess training efficacy when various battery data are combined. Notably:
 - CRUH combines CALCE, RWTH, UL_PUR, and HNEI datasets
 - CRUSH merges CALCE, RWTH, UL_PUR, SNL, and HNEI datasets
 - MIX incorporates all datasets used in our study.
@@ -47,7 +48,7 @@ For RUL (Remaining Useful Life) tasks, we also created combined datasets from th
 For more detailed information on the data, please refer to the Appendix A of our paper.
 
 
-## Benchmark result of RUL(Remain Useful Life) task
+## Benchmark result of RUL task
 Benchmark results for remaining useful life prediction. The comparison methods are split into four types, including 
 1) dummy regressor, a trivial baseline that uses the mean of training label as predictions; 
 2) linear models with features designed by domain experts; 
