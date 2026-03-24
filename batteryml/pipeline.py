@@ -120,6 +120,8 @@ class Pipeline:
             filename = f'predictions_seed_{seed}_{ts}.pkl'
             with open(Path(self.config['workspace']) / filename, 'wb') as f:
                 pickle.dump(obj, f)
+                
+        return scores
 
     def _prepare_model(self,
                        ckpt_to_resume: str | None = None,
