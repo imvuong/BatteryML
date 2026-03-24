@@ -5,6 +5,8 @@ data
 workspaces/
 experiments/
 **/cache/
+.venv
+workspace/
 
 
 # Byte-compiled / optimized / DLL files
