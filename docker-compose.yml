@@ -1,0 +1,52 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: batteryml_postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  minio:
+    image: minio/minio:latest
+    container_name: batteryml_minio
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    command: server /data --console-address ":9001"
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - ./data/minio:/data
+    restart: unless-stopped
+
+  mlflow:
+    build: .
+    container_name: batteryml_mlflow
+    working_dir: /app
+    volumes:
+      - ./workspace:/app/workspace
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: mlflow
+      POSTGRES_PASSWORD: mlflow_pass
+      ARTIFACT_ROOT: ${ARTIFACT_ROOT}
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_REGION: us-east-1
+      MLFLOW_S3_ENDPOINT_URL: ${MLFLOW_S3_ENDPOINT_URL}
+      MLFLOW_TRACKING_URI: ${MLFLOW_TRACKING_URI}
+      MINIO_HOST: minio
+      MINIO_PORT: 9000
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres
+      - minio
