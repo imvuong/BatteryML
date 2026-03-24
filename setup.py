@@ -20,7 +20,7 @@ setup(
     # See https://github.com/microsoft/BatteryML/issues/21
     entry_points={
         'console_scripts': [
-            'batteryml=bin.batteryml:main',
+            'batteryml=bin.batteryml_cli:main',
         ],
     },
     classifiers=[
