@@ -50,3 +50,14 @@ services:
     depends_on:
       - postgres
       - minio
+
+  # Build static documentation with GitBook:
+  #   docker compose run --rm docs-gitbook
+  # Output:
+  #   _book/
+  docs-gitbook:
+    image: billryan/gitbook:latest
+    working_dir: /gitbook
+    volumes:
+      - .:/gitbook
+    command: sh -lc "rm -rf _book && gitbook build docs _book"
