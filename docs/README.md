@@ -1,136 +1,147 @@
-<div align="center">  
-  <img src="./image/Logo_RGB.png" width="300"> 
-</div>  
+# BatteryML Learning Guide
 
-# BatteryML: An Open-Source Tool for Machine Learning on Battery Degradation
-## Recent News
-Official code and data repository of BatteryML: An Open-Source Tool for Machine Learning on Battery Degradation (ICLR 2024). Please star, watch, and fork BatteryML for the active updates! We appreciate any questions and suggestions! 
+Welcome to the **BatteryML Learning Guide** — a comprehensive, hands-on resource for learning machine learning through battery science!
 
-Our paper is now available on [Arxiv](https://arxiv.org/abs/2310.14714) and [ICLR 2024](https://iclr.cc/virtual/2024/poster/17628)!  This paper provides detailed introduction to our design, which we will be actively updating during the development of BatteryML.
+## 🎯 What is This?
 
-## Introduction
+This documentation is a complete self-learning course that teaches you:
 
-The performance degradation of lithium batteries is a complex electrochemical process, involving factors such as the growth of solid electrolyte interface, lithium precipitation, loss of active materials, etc. Furthermore, this inevitable performance degradation can have a significant impact on critical commercial scenarios, such as causing 'range anxiety' for electric vehicle users and affecting the power stability of energy storage systems. Therefore, effectively analyzing and predicting the performance degradation of lithium batteries to provide guidance for early prevention and intervention has become a crucial research topic.
+- **Machine Learning Fundamentals** — from data preprocessing to model evaluation
+- **Real-World ML Systems** — understanding production-ready codebases
+- **Time Series Analysis** — working with temporal battery data
+- **Deep Learning** — neural networks for battery state prediction
+- **Open Source Contribution** — how to contribute to ML projects
 
-To this end, we open source the BatteryML tool to facilitate the research and development of machine learning on battery degradation.
-We hope BatteryML can empower both battery researchers and data scientists to gain deeper insights from battery degradation data and build more powerful models for accurate predictions and early interventions.
+## 🔋 Why BatteryML?
 
-## Framework
+[BatteryML](https://github.com/battery-ml/batteryml) is an open-source machine learning framework for battery research. It provides:
 
-<!-- <img src="./image/framework.png" width="800"> -->
+- Real-world datasets (battery cycling data)
+- Production-quality code structure
+- Multiple algorithm implementations
+- Clear separation of concerns (data, features, models)
 
-<img src="./image/framework_new.png" width="800">
+By learning through BatteryML, you'll understand not just ML theory, but how to **build and modify real ML systems**.
 
-## Highlights:
-- **Open-source and Community-driven:** BatteryML is an open-source project for battery degradation modeling, encouraging contributions and collaboration from the communities of both computer science and battery research to push the frontiers of this crucial field.
-- **A Comprehensive Dataset Collection:** BatteryML includes a comprehensive dataset collection, allowing easy accesses to most publicly available battery data.
-- **Preprocessing and Feature Engineering:** Our tool offers built-in data preprocessing and feature engineering capabilities, making it easier for researchers and developers to prepare ready-to-use battery datasets for machine learning.
-- **A Wide Range of Models:** BatteryML already includes most classic models in the literature, enabling developers to quickly compare and benchmark different approaches.
-- **Extensible and Customizable:** BatteryML provides flexible interfaces to support further extensions and customizations, making it a versatile tool for potential applications in battery research.
+## 🚀 Who Is This For?
 
-## Dataset
-| Data Source | Electrode Chemistry | Nominal Capacity | Voltage Range (V) | RUL dist. | SOC dist. (%) | SOH dist. (%) | Cell Count |  
-|---|---|---|---|---|---|---|---|  
-| CALCE | Lithium Cobalt Oxide (LCO)/graphite | 1.1 | 2.7-4.2 | 566±106 | 77±17 | 48±30 | 13 |  
-| MATR | Lithium Iron Phosphate (LFP)/graphite | 1.1 | 2.0-3.6 | 823±368 | 93±7 | 36±36 | 180 |  
-| HUST | Lithium Iron Phosphate (LFP)/graphite | 1.1 | 2.0-3.6 | 1899±389 | 100±10 | 43±28 | 77 |  
-| HNEI | Nickel Manganese Cobalt_Lithium Cobalt Oxide (NMC_LCO)/graphite | 2.8 | 3.0-4.3 | 248±15 | 64±17 | 49±28 | 14 |  
-| RWTH | Nickel Manganese Cobalt (NMC)/carbon | 1.11 | 3.5-3.9 | 658±64 | 60±24 | 46±22 | 48 |  
-| SNL | Nickel Cobalt Aluminum (NCA), Nickel Manganese Cobalt (NMC), Lithium Iron Phosphate (LFP)/graphite | 1.1 | 2.0-3.6 | 1256±1321 | 86±7 | 45±27 | 61 |  
-| UL_PUR | Nickel Cobalt Aluminum (NCA)/graphite | 3.4 | 2.7-4.2 | 209±50 | 89±6 | 41±33 | 10 |  
+- **Beginners** with basic Python knowledge who want to learn ML
+- **Intermediate practitioners** looking to understand production ML systems
+- **Battery researchers** wanting to apply ML to their domain
+- **Open source contributors** seeking to contribute to ML projects
 
+## 📖 How to Use This Guide
 
-For Remaining Useful Life (RUL) tasks, we also created combined datasets from the public sources to assess training efficacy when various battery data are combined. Notably:
-- CRUH combines CALCE, RWTH, UL_PUR, and HNEI datasets
-- CRUSH merges CALCE, RWTH, UL_PUR, SNL, and HNEI datasets
-- MIX incorporates all datasets used in our study.
+### Learning Paths
 
-For more detailed information on the data, please refer to the Appendix A of our paper.
+**Path 1: Complete Beginner (8-12 weeks)**
+1. Start with [Getting Started](getting-started/overview.md)
+2. Work through Phase 1-3 carefully
+3. Practice all hands-on exercises
+4. Build the mini-framework in Phase 5
 
+**Path 2: Experienced Developer (4-6 weeks)**
+1. Skim Phase 1
+2. Focus on Phase 2-3 (codebase understanding)
+3. Deep dive into Phase 4 (Deep Learning)
+4. Contribute in Phase 8
 
-## Benchmark result of RUL task
-Benchmark results for remaining useful life prediction. The comparison methods are split into four types, including 
-1) dummy regressor, a trivial baseline that uses the mean of training label as predictions; 
-2) linear models with features designed by domain experts; 
-3) traditional statistical models with *QdLinear* feature; 
-4) deep models with *QdLinear* feature. 
+**Path 3: Domain Expert (2-4 weeks)**
+1. Review Phase 1 basics
+2. Jump to Phase 7 (Advanced Projects)
+3. Explore Phase 6 for algorithm details
+4. Use Reference section as needed
 
-For models sensitive to initialization, we present the error mean across ten seeds and attach the standard deviation as subscript.  
+## 🗺️ Documentation Structure
 
-| **Models**     | **MATR1** | **MATR2** | **HUST** | **SNL** | **CLO** | **CRUH** | **CRUSH** | **MIX** |  
-|----------------|-----------|-----------|----------|---------|---------|----------|-----------|---------|  
-| Dummy regressor|398        |510        |419       |466      |331      |239       |576        |573      |  
-| "Variance" model|136       |211        |398       |360      |179      |118       |506        |521      |  
-| "Discharge" model|329      |**149**    |**322**   |267      |143      |76        |>1000    |>1000  |  
-| "Full" model   |167        |>1000    |335       |433      |**138**  |93        |>1000    |331      |  
-| Ridge regression|116       |184        |>1000   |242      |169      |65        |>1000    |372      |  
-| PCR            |**90**    |187        |435       |**200**  |197      |68        |560        |376      |  
-| PLSR           |104        |181        |431       |242      |176      |**60**    |535        |383      |  
-| Gaussian process|154       |224        |>1000   |251      |204      |115       |>1000    |573      |  
-| XGBoost        |334        |799        |395       |547      |215      |119       |**330**    |205      |  
-| Random forest  |168±9      |233±7      |368±7     |532±25   |192±2    |81±1      |416±5      |**197±0**|  
-| MLP            |149±3      |275±27     |459±9     |370±81   |146±5    |103±4     |565±9      |451±42   |  
-| CNN            |102±94     |228±104    |465±75    |924±267  |>1000  |174±92    |545±11     |272±101  |  
-| LSTM           |119±11     |219±33     |443±29    |539±40   |222±12   |105±10    |519±39     |268±9    |  
-| Transformer    |135±13     |364±25     |391±11    |424±23   |187±14   |81±8      |550±21     |271±16   |  
-  
+📚 BatteryML Learning Guide
+│
+├── 🚀 Getting Started
+│   ├── Overview & Learning Strategy
+│   ├── Environment Setup
+│   └── Running BatteryML
+│
+├── 🧠 Phase 1: Understanding the ML Pipeline
+│   └── Core ML concepts with BatteryML examples
+│
+├── 🔬 Phase 2: Mapping Algorithms to Code
+│   └── Deep codebase exploration
+│
+├── ⚙️ Phase 3: Modifying the Pipeline
+│   └── Hands-on customization
+│
+├── 🤖 Phase 4: Deep Learning & Time Series
+│   └── Neural networks for battery data
+│
+├── 🧪 Phase 5: Build Your Own Mini Framework
+│   └── Build from scratch to solidify understanding
+│
+├── 🧠 Phase 6: Algorithms Deep Dive
+│   └── Mathematical foundations
+│
+├── 🧩 Phase 7: Advanced Projects
+│   └── Real-world applications
+│
+├── 🛠️ Phase 8: Contributing to Open Source
+│   └── Give back to the community
+│
+└── 📚 Reference
+└── Quick lookup resources
 
-
-## Quick Start
-
-### Install
-
-```shell
-pip install -r requirements.txt
-pip install .
-```
-
-This will install the BatteryML into your Python environment, together with a convenient command line interface (CLI) `batteryml`.
-You may also need to [install PyTorch](https://pytorch.org/get-started/locally/) for deep models.
-
-### Download Raw Data and Run Preprocessing Scripts
-<!-- Download the raw data and execute the preprocessing scripts as per the provided [instruction](./dataprepare.md). You can also use the code below to download public datasets and convert them to BatteryML's uniform data format. -->
-Download raw files of public datasets and preprocess them into `BatteryData` of BatteryML is now as simple as two commands:
+## ⚡ Quick Start
 
 ```bash
-batteryml download MATR /path/to/save/raw/data
-batteryml preprocess MATR /path/to/save/raw/data /path/to/save/processed/data
+# Clone BatteryML
+git clone https://github.com/battery-ml/batteryml.git
+cd batteryml
+
+# Install dependencies
+pip install -e .
+
+# Run your first model
+python main.py --config configs/baseline.yaml
 ```
 
-### Run Cycler Preprocessing Scripts to process your data
-If your data is measured by a cycler such as ARBIN, NEWARE, etc., you can use this command to process your data into `BatteryData` of BatteryML.
+Then head to Running BatteryML for detailed instructions.
 
-```bash
-batteryml preprocess ARBIN /path/to/save/raw/data /path/to/save/processed/data --config /path/to/config/yaml/file
-```
+## 🎓 Learning Principles
+This guide follows these principles:
 
-Due to variations in software versions and configurations, the data format and fields exported by the same cycler may differ. Therefore, we have added default processing configurations in the `/configs/cycler` directory to map raw data to target data fields. You can edit these default configurations as needed.
+1. Learn by Doing — Every section includes hands-on exercises
+2. Real Code, Real Data — No toy examples; work with production code
+3. Progressive Complexity — Start simple, gradually increase depth
+4. Practical Focus — Understand why, not just what
+5. Community Learning — Contribute back to open source
 
-We currently support `ARBIN` and `NEWARE` data formats. Additionally, `Biologic`, `LANDT`, and `Indigo` formats are being integrated.  If you encounter any issues with our cycler processing your data, please submit an issue and attach a sample data file to help us ensure rapid compatibility with your data format.
+## 🛠️ Prerequisites
+Required:
+* Python basics (functions, classes, loops)
+* Command line familiarity
+* Git basics
 
+Helpful but not required:
+* NumPy/Pandas basics
+* Basic statistics
+* Jupyter notebooks
 
+## 📊 What You'll Build
+By the end of this guide, you'll have:
 
-### Run training and/or inference tasks using config files
+* ✅ Trained multiple ML models on real battery data
+* ✅ Modified preprocessing and feature engineering pipelines
+* ✅ Built a custom neural network for time series prediction
+* ✅ Created your own mini ML framework
+* ✅ Implemented a visualization dashboard
+* ✅ Made your first open source contribution
 
-BatteryML supports using a simple config file to specify the training and inference process. We provided several examples in `configs`. For example, to reproduce the "variance" model for battery life prediction, run
+## 🤝 Contributing
+Found a typo? Want to add an example? See Contributing to Open Source to learn how!
 
-```bash
-batteryml run configs/baselines/sklearn/variance_model/matr_1.yaml --workspace ./workspace/test --train --eval
-```
+## 📞 Get Help
+* Issues: Check Common Pitfalls sections
+* Community: Join BatteryML discussions on GitHub
+* Documentation: Use the Reference section
 
+## 🎉 Let's Begin!
+Ready to start? Head to Overview & Learning Strategy to plan your learning journey!
 
-## Citation
-
-If you find this work useful, we would appreciate citations to the following paper:
-```
-@inproceedings{zhang2024batteryml,
-  title={Battery{ML}: An Open-source Platform for Machine Learning on Battery Degradation},
-  author={Han Zhang and Xiaofan Gui and Shun Zheng and Ziheng Lu and Yuqi Li and Jiang Bian},
-  booktitle={The Twelfth International Conference on Learning Representations},
-  year={2024}
-}
-```
-
-## Documentation
-
-By leveraging BatteryML, researchers can gain valuable insights into the latest advancements in battery prediction and materials science, enabling them to conduct experiments efficiently and effectively. We invite you to join us in our journey to accelerate battery research and innovation by contributing to and utilizing BatteryML for your research endeavors.

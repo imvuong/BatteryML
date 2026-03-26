@@ -1,5 +1,7 @@
 # Table of Contents
 
+* [Introduction](README.md)
+
 ## 🚀 Getting Started
 
 * [Overview & Learning Strategy](getting-started/overview.md)
