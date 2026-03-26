@@ -134,3 +134,12 @@ If you find this work useful, we would appreciate citations to the following pap
 ## Documentation
 
 By leveraging BatteryML, researchers can gain valuable insights into the latest advancements in battery prediction and materials science, enabling them to conduct experiments efficiently and effectively. We invite you to join us in our journey to accelerate battery research and innovation by contributing to and utilizing BatteryML for your research endeavors.
+
+
+## Troubleshooting
+
+### Unable to find libomp when running in Jupyter Notebook
+
+```bash
+install_name_tool -change @rpath/libomp.dylib /Users/vly/homebrew/opt/libomp/lib/libomp.dylib /Users/vly/Code/BatteryML/.venv/lib/python3.12/site-packages/xgboost/lib/libxgboost.dylib
+```
