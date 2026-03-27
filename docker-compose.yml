@@ -31,7 +31,7 @@ services:
     container_name: batteryml_mlflow
     working_dir: /app
     volumes:
-      - ./workspace:/app/workspace
+      - ./workspaces:/app/workspaces
     environment:
       POSTGRES_HOST: postgres
       POSTGRES_PORT: 5432
@@ -51,13 +51,14 @@ services:
       - postgres
       - minio
 
-  # Build static documentation with GitBook:
-  #   docker compose run --rm docs-gitbook
-  # Output:
-  #   _book/
-  docs-gitbook:
+  gitbook:
     image: billryan/gitbook:latest
-    working_dir: /gitbook
+    container_name: batteryml_gitbook
+    platform: linux/amd64
+    working_dir: /gitbook/docs
+    ports:
+      - "4000:4000"
     volumes:
       - .:/gitbook
-    command: sh -lc "rm -rf _book && gitbook build docs _book"
+    command: sh -c "rm -rf node_modules _book && gitbook install && gitbook serve --host 0.0.0.0 --port 4000"
+    tty: true
