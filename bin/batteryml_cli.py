@@ -105,7 +105,7 @@ def main():
         default_args = argparse.Namespace(
             func=run,
             config="configs/baselines/sklearn/variance_model/matr_1.yaml",
-            workspace="./workspace",
+            workspace="./workspaces",
             device="cpu",
             ckpt_to_resume=None,
             train=True,
