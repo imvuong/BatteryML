@@ -1,78 +1,63 @@
 # Table of Contents
 
-* [Introduction](README.md)
+## Getting Started
 
-## 🚀 Getting Started
+- [Introduction](README.md)
 
-* [Overview & Learning Strategy](getting-started/overview.md)
-* [Environment Setup](getting-started/environment-setup.md)
-* [Running BatteryML](getting-started/running-batteryml.md)
+## Overview
 
-## 🧠 Phase 1: Understanding the ML Pipeline
+- [Purpose of the Document](overview/purpose.md)
+- [What is BatteryML?](overview/what-is-batteryml.md)
+- [Why It Matters](overview/why-it-matters.md)
+- [Problems Solved](overview/problems-solved.md)
 
-* [Introduction to ML Pipelines](phase-1-ml-pipeline/README.md)
-* [Datasets & Data Splits](phase-1-ml-pipeline/data.md)
-* [Preprocessing](phase-1-ml-pipeline/preprocessing.md)
-* [Feature Engineering](phase-1-ml-pipeline/feature-engineering.md)
-* [Model Basics](phase-1-ml-pipeline/models.md)
+## Key Concepts & Components
 
-## 🔬 Phase 2: Mapping Algorithms to Code
+- [Core Terminology](concepts/terminology.md)
+- [Platform Architecture](concepts/architecture.md)
+- [Datasets](concepts/datasets.md)
+- [Features & Labels](concepts/features-and-labels.md)
+- [BatteryData Format](concepts/batterydata-format.md)
 
-* [Tracing the Codebase](phase-2-algorithms-code/tracing-code.md)
-* [Understanding Training Flow](phase-2-algorithms-code/training-flow.md)
-* [Exploring Baseline Models](phase-2-algorithms-code/baseline-models.md)
-* [Algorithm Deep Dive](phase-2-algorithms-code/algorithms.md)
-* [Hands-on Exercises](phase-2-algorithms-code/exercises.md)
+## Technical Deep Dive
 
-## ⚙️ Phase 3: Modifying the Pipeline
+- [Step-by-Step Workflow](technical-deep-dive/step-by-step-workflow.md)
+- [Algorithms & Models](technical-deep-dive/algorithms-and-models.md)
+- [Key Equations](technical-deep-dive/equations.md)
+- [Evaluation Results](technical-deep-dive/evaluation-results.md)
 
-* [Custom Feature Engineering](phase-3-modifications/custom-features.md)
-* [Changing Preprocessing](phase-3-modifications/preprocessing-changes.md)
-* [Experimentation & Evaluation](phase-3-modifications/experiments.md)
-* [Adding New Datasets](phase-3-modifications/datasets.md)
+## Code & Implementation
 
-## 🤖 Phase 4: Deep Learning & Time Series
+- [Libraries & Tools](code-and-implementation/libraries-and-tools.md)
+- [Pipeline API](code-and-implementation/pipeline-api.md)
+- [Custom Feature Extractors](code-and-implementation/custom-features.md)
+- [Custom Models](code-and-implementation/custom-models.md)
+- [Custom Preprocessing](code-and-implementation/custom-preprocessing.md)
+- [Configuration Files](code-and-implementation/configuration-files.md)
 
-* [Introduction to Time Series](phase-4-deep-learning/time-series.md)
-* [Neural Networks Basics](phase-4-deep-learning/neural-networks.md)
-* [Training Deep Learning Models](phase-4-deep-learning/training.md)
-* [Model Comparison](phase-4-deep-learning/comparison.md)
+## Visuals & Figures
 
-## 🧪 Phase 5: Build Your Own Mini Framework
+- [Figures Explained](visuals/figures-explained.md)
 
-* [Project Structure](phase-5-mini-framework/structure.md)
-* [Data Loader Implementation](phase-5-mini-framework/data-loader.md)
-* [Feature Pipeline](phase-5-mini-framework/features.md)
-* [Model Training](phase-5-mini-framework/training.md)
-* [Evaluation](phase-5-mini-framework/evaluation.md)
+## Practical Guide
 
-## 🧠 Phase 6: Algorithms Deep Dive
+- [Real-World Analogy](practical-guide/real-world-analogy.md)
+- [Getting Started](practical-guide/getting-started.md)
+- [Example Workflow](practical-guide/example-workflow.md)
 
-* [Supervised Learning](phase-6-algorithms/supervised.md)
-* [Advanced Algorithms](phase-6-algorithms/advanced.md)
-* [Mathematics for ML](phase-6-algorithms/math.md)
-* [Recommended Resources](phase-6-algorithms/resources.md)
+## Key Takeaways
 
-## 🧩 Phase 7: Advanced Projects
+- [Core Insights](key-takeaways/insights.md)
+- [Strengths & Limitations](key-takeaways/strengths-and-limitations.md)
+- [Future Directions](key-takeaways/future-directions.md)
 
-* [Battery Failure Prediction](phase-7-projects/failure-prediction.md)
-* [Visualization Dashboard](phase-7-projects/dashboard.md)
-* [Model Optimization](phase-7-projects/optimization.md)
-* [Exploring New Algorithms](phase-7-projects/new-algorithms.md)
+## Learning & Assessment
 
-## 🛠️ Phase 8: Contributing to Open Source
+- [Quiz Questions](learning/quiz-questions.md)
+- [Suggested Topics](learning/suggested-topics.md)
+- [ELI5 Summary](learning/eli5-summary.md)
 
-* [Understanding the Codebase](phase-8-contributing/codebase.md)
-* [Finding Issues](phase-8-contributing/issues.md)
-* [Submitting Contributions](phase-8-contributing/contributing.md)
+## Appendix
 
-## 📚 Reference
-
-* [Tools & Technologies](reference/tools.md)
-* [ML Libraries](reference/libraries.md)
-* [Glossary](reference/glossary.md)
-
-## 📅 Learning Plan
-
-* [Weekly Schedule](schedule/weekly.md)
-* [30-Day Plan (Optional)](schedule/30-day.md)
+- [Acronyms & Abbreviations](appendix/acronyms.md)
+- [References](appendix/references.md)

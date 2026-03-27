@@ -1,0 +1,27 @@
+{
+    "title": "BatteryML: A Comprehensive Guide",
+    "description": "Deep analysis of the BatteryML open-source platform for machine learning on battery degradation",
+    "author": "Analysis Guide",
+    "language": "en",
+    "gitbook": ">=3.0.0",
+    "plugins": [
+        "expandable-chapters",
+        "search",
+        "highlight",
+        "copy-code-button",
+        "back-to-top-button",
+        "katex"
+    ],
+    "pluginsConfig": {
+        "expandable-chapters": {},
+        "katex": {
+            "macros": {
+                "\\f": "f(#1)"
+            }
+        }
+    },
+    "structure": {
+        "readme": "README.md",
+        "summary": "SUMMARY.md"
+    }
+}
